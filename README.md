@@ -201,6 +201,3 @@ tail -f /tmp/training_log.txt
 python3 visualize_training.py
 ```
 
----
-
-**Good luck with your final year project!** 🎓��
