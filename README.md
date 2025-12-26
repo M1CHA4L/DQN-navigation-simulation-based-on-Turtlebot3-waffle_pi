@@ -152,27 +152,6 @@ ros2_rl_project/
 
 ## 🔧 Troubleshooting
 
-| Problem | Solution |
-|---------|----------|
-| Gazebo GUI won't start | Script auto-falls back to headless mode |
-| "Unable to contact server" | Wait 15 seconds after Gazebo starts |
-| Import errors | Run: `source ~/turtlebot3_ws/install/setup.bash` |
-| No graphs showing | Check `/tmp/training_log.txt` exists |
-| Robot flashing/stuck in Gazebo | **FIXED!** Now uses ROBOTIS delete+respawn method |
-| Robot not visible in Gazebo | **MUST restart training!** Kill all processes and run again |
-| Robot position wrong after reset | Fixed - uses proper reset_robot() method |
-
-### If Robot Flashing or Stuck (NOW FIXED):
-
-The robot was flashing because the code was using **teleport** repeatedly, which doesn't
-let physics settle. Now using the **official ROBOTIS method**:
-- Delete robot entity
-- Wait 0.2 seconds
-- Respawn robot at center
-- Wait 0.5 seconds for physics to settle
-
-This completely eliminates the flashing/stuck issue!
-
 ### If Training Seems Broken:
 
 **Stop everything and restart:**
