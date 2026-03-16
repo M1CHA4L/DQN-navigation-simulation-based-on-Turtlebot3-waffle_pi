@@ -1,0 +1,147 @@
+digraph {
+	graph [size="12,12"]
+	node [align=left fontname=monospace fontsize=10 height=0.2 ranksep=0.1 shape=box style=filled]
+	135920175362400 [label="
+ (1, 2)" fillcolor=darkolivegreen1]
+	135920181612064 -> 135920175362880 [dir=none]
+	135920175362880 [label="result
+ (1, 2)" fillcolor=orange]
+	135920181612064 [label="TanhBackward0
+----------------------
+result: [saved tensor]"]
+	135920175135328 -> 135920181612064
+	135920175135328 -> 135920175362240 [dir=none]
+	135920175362240 [label="mat1
+ (1, 128)" fillcolor=orange]
+	135920175135328 -> 135920175362000 [dir=none]
+	135920175362000 [label="mat2
+ (128, 2)" fillcolor=orange]
+	135920175135328 [label="AddmmBackward0
+--------------------------------
+alpha           :              1
+beta            :              1
+mat1            : [saved tensor]
+mat1_sym_sizes  :       (1, 128)
+mat1_sym_strides:       (128, 1)
+mat2            : [saved tensor]
+mat2_sym_sizes  :       (128, 2)
+mat2_sym_strides:       (1, 128)"]
+	135920178164496 -> 135920175135328
+	135920175358960 [label="actor_mean.2.bias
+ (2)" fillcolor=lightblue]
+	135920175358960 -> 135920178164496
+	135920178164496 [label=AccumulateGrad]
+	135920175496448 -> 135920175135328
+	135920175496448 -> 135920175361200 [dir=none]
+	135920175361200 [label="result
+ (1, 128)" fillcolor=orange]
+	135920175496448 [label="TanhBackward0
+----------------------
+result: [saved tensor]"]
+	135920175244688 -> 135920175496448
+	135920175244688 -> 135920175362160 [dir=none]
+	135920175362160 [label="mat1
+ (1, 256)" fillcolor=orange]
+	135920175244688 -> 135920175361520 [dir=none]
+	135920175361520 [label="mat2
+ (256, 128)" fillcolor=orange]
+	135920175244688 [label="AddmmBackward0
+--------------------------------
+alpha           :              1
+beta            :              1
+mat1            : [saved tensor]
+mat1_sym_sizes  :       (1, 256)
+mat1_sym_strides:       (256, 1)
+mat2            : [saved tensor]
+mat2_sym_sizes  :     (256, 128)
+mat2_sym_strides:       (1, 256)"]
+	135920175237824 -> 135920175244688
+	135920175358400 [label="actor_mean.0.bias
+ (128)" fillcolor=lightblue]
+	135920175358400 -> 135920175237824
+	135920175237824 [label=AccumulateGrad]
+	135920173597120 -> 135920175244688
+	135920173597120 -> 135920175362080 [dir=none]
+	135920175362080 [label="result
+ (1, 256)" fillcolor=orange]
+	135920173597120 [label="TanhBackward0
+----------------------
+result: [saved tensor]"]
+	135920173604848 -> 135920173597120
+	135920173604848 -> 135920175362720 [dir=none]
+	135920175362720 [label="mat1
+ (1, 256)" fillcolor=orange]
+	135920173604848 -> 135920175359760 [dir=none]
+	135920175359760 [label="mat2
+ (256, 256)" fillcolor=orange]
+	135920173604848 [label="AddmmBackward0
+--------------------------------
+alpha           :              1
+beta            :              1
+mat1            : [saved tensor]
+mat1_sym_sizes  :       (1, 256)
+mat1_sym_strides:       (256, 1)
+mat2            : [saved tensor]
+mat2_sym_sizes  :     (256, 256)
+mat2_sym_strides:       (1, 256)"]
+	135920173603600 -> 135920173604848
+	135920222550000 [label="shared_net.2.bias
+ (256)" fillcolor=lightblue]
+	135920222550000 -> 135920173603600
+	135920173603600 [label=AccumulateGrad]
+	135920173605040 -> 135920173604848
+	135920173605040 -> 135920175360800 [dir=none]
+	135920175360800 [label="result
+ (1, 256)" fillcolor=orange]
+	135920173605040 [label="TanhBackward0
+----------------------
+result: [saved tensor]"]
+	135920173603648 -> 135920173605040
+	135920173603648 -> 135920175362800 [dir=none]
+	135920175362800 [label="mat1
+ (1, 22)" fillcolor=orange]
+	135920173603648 [label="AddmmBackward0
+--------------------------------
+alpha           :              1
+beta            :              1
+mat1            : [saved tensor]
+mat1_sym_sizes  :        (1, 22)
+mat1_sym_strides:             ()
+mat2            :           None
+mat2_sym_sizes  :      (22, 256)
+mat2_sym_strides:        (1, 22)"]
+	135920173602784 -> 135920173603648
+	135920222550480 [label="shared_net.0.bias
+ (256)" fillcolor=lightblue]
+	135920222550480 -> 135920173602784
+	135920173602784 [label=AccumulateGrad]
+	135920173604224 -> 135920173603648
+	135920173604224 [label=TBackward0]
+	135920173600672 -> 135920173604224
+	135920222537520 [label="shared_net.0.weight
+ (256, 22)" fillcolor=lightblue]
+	135920222537520 -> 135920173600672
+	135920173600672 [label=AccumulateGrad]
+	135920173604176 -> 135920173604848
+	135920173604176 [label=TBackward0]
+	135920173600144 -> 135920173604176
+	135924832426720 [label="shared_net.2.weight
+ (256, 256)" fillcolor=lightblue]
+	135924832426720 -> 135920173600144
+	135920173600144 [label=AccumulateGrad]
+	135920173604992 -> 135920175244688
+	135920173604992 [label=TBackward0]
+	135920173603792 -> 135920173604992
+	135920175358720 [label="actor_mean.0.weight
+ (128, 256)" fillcolor=lightblue]
+	135920175358720 -> 135920173603792
+	135920173603792 [label=AccumulateGrad]
+	135920175488864 -> 135920175135328
+	135920175488864 [label=TBackward0]
+	135920175246656 -> 135920175488864
+	135920175359520 [label="actor_mean.2.weight
+ (2, 128)" fillcolor=lightblue]
+	135920175359520 -> 135920175246656
+	135920175246656 [label=AccumulateGrad]
+	135920181612064 -> 135920175362400
+}
